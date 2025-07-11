@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/bika
     username: postgres
-    password: #Your password here
+    password: chuidesole
 
     driver-class-name: org.postgresql.Driver
   jpa:
@@ -48,7 +48,7 @@ minio:
   bucket: bika
 
 jwt:
-  secret: ${JWT_SECRET:your-256-bit-secret}
+  secret: ${JWT_SECRET:5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437}
   expiration: 86400000 # 24 hours
   refresh-token:
     expiration: 604800000 # 7 days
