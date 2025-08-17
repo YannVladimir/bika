@@ -5,7 +5,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/bika
     username: postgres
     password: chuidesole
-
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -33,6 +32,23 @@ spring:
     redis:
       host: localhost
       port: 6379
+  mail:
+    host: mail.c-note.rw
+    port: 587
+    username: admin@c-note.rw
+    password: admin@c-note.rw
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: mail.c-note.rw
+        transport:
+          protocol: smtp
+        debug: false
 
 server:
   port: 8081
@@ -57,6 +73,13 @@ jwt:
   expiration: 86400000 # 24 hours
   refresh-token:
     expiration: 604800000 # 7 days
+
+# Email configuration
+email:
+  from: admin@c-note.rw
+  from-name: Bika Document Management System
+  frontend-url: http://localhost:3000
+  reset-password-expiry: 3600000 # 1 hour in milliseconds
 
 logging:
   level:
